@@ -1,0 +1,30 @@
+int array_centered(int arr[])
+{
+    int arr_ln, rt_value, mid_value, i;
+    arr_ln = sizeof(arr)/sizeof(arr[0]);
+    if (arr_ln % 2 == 0)
+    {
+        rt_value = 0;
+    }
+    else
+    {
+        mid_value = (arr_ln/2)+1;
+        for (i = mid_value; i < arr_ln ; i++)
+        {
+            arr[i] = arr[i+1];
+        }
+        for (i = 0; i < arr_ln ; i ++)
+        {
+            if (arr[i] <= mid_value)
+            {
+                rt_value = 0;
+                break;
+            }
+            else
+            {
+                rt_value = 1;
+            }
+            return rt_value;
+        }
+    }
+}
